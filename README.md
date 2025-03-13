@@ -20,7 +20,7 @@ A command-line tool to check and display SSL certificate information for any dom
 To install from source:
 
 ```bash
-git clone https://github.com/yourusername/ssl-checker.git
+git clone https://github.com/70-10/ssl-checker.git
 cd ssl-checker
 cargo build --release
 ```
