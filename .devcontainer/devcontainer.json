@@ -1,0 +1,20 @@
+{
+	"name": "SSL Checker",
+	"runArgs": [
+		"--name=ssl-checker",
+		"--rm"
+	],
+	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"workbench.colorCustomizations": {
+					"editorWhitespace.foreground": "#7c7a7a"
+				},
+				"editor.renderWhitespace": "boundary",
+				"editor.stickyScroll.enabled": true
+			},
+			"extensions": []
+		}
+	}
+}
