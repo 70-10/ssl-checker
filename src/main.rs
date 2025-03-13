@@ -7,7 +7,6 @@ use std::net::TcpStream;
 #[command(version, about, long_about = None)]
 struct Args {
     /// Domain name to check SSL certificate
-    #[arg(short, long)]
     domain: String,
 }
 
@@ -16,8 +15,10 @@ fn main() -> Result<(), Box<dyn Error>> {
     let domain = args.domain;
     let addr = format!("{}:443", domain);
 
-    // Create SslConnector (using TLS)
-    let connector = SslConnector::builder(SslMethod::tls())?.build();
+    // Create SslConnector (using TLS) with relaxed verification
+    let mut builder = SslConnector::builder(SslMethod::tls())?;
+    builder.set_verify(openssl::ssl::SslVerifyMode::NONE);
+    let connector = builder.build();
 
     // Establish TCP connection and TLS connection
     let stream = TcpStream::connect(&addr)?;

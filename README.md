@@ -27,19 +27,13 @@ cargo build --release
 ## Usage
 
 ```bash
-ssl-checker --domain <domain>
-```
-
-or using the short option:
-
-```bash
-ssl-checker -d <domain>
+ssl-checker <domain>
 ```
 
 ### Example
 
 ```bash
-ssl-checker --domain example.com
+ssl-checker example.com
 ```
 
 This will display information such as:
